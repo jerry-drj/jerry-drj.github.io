@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    branches: [ "master" ]
+    branches: [ "project1" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "project1" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,6 +24,17 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+
+      # # 添加node编译节点
+      # - name: Setup Node
+      # - uses: actions/setup-node@v1
+      # with:
+      #     node-version: '12.x'
+      #   - name: Install Dependencies
+      #     run: npm install
+      #   - name: Build Project
+      #     run: npm run build
+
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
