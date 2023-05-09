@@ -31,16 +31,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      # # 添加node编译节点
-      # - name: Setup Node
-      # - uses: actions/setup-node@v1
-      # with:
-      #     node-version: '12.x'
-      #   - name: Install Dependencies
-      #     run: npm install
-      #   - name: Build Project
-      #     run: npm run build
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install
+      - run: npm run build
 
 
       # Runs a single command using the runners shell
