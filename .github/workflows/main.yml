@@ -12,7 +12,6 @@ on:
     paths-ignore:
       - README.md
       - CONTRIBUTING.md
-      - main.yml
   pull_request:
     branches:
       - '**'
@@ -55,7 +54,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './dist/'
+          # Upload dist repository
+          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
