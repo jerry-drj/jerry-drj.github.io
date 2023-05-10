@@ -12,6 +12,7 @@ on:
     paths-ignore:
       - README.md
       - CONTRIBUTING.md
+      - main.yml
   pull_request:
     branches:
       - '**'
@@ -56,6 +57,7 @@ jobs:
         with:
           # Upload dist repository
           path: './dist'
+          build_dir: 'dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
